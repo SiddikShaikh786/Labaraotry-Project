@@ -1,0 +1,23 @@
+{
+  "name": "shoppingapprest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "author": "Pratik Rai",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jest": "^27.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1",
+    "supertest": "^6.2.2"
+  }
+}

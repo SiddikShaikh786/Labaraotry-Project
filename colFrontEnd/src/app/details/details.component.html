@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home screen</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mt-5">
+                <input class="form-control" type="search" name="firstName" placeholder="serach here"
+                    [(ngModel)]="firstName" />
+
+            </div>
+        </div> <br>
+
+        <form method="get">
+
+            <table class="table table-bordered table-hover">
+                <thead class="bg-info bg-danger">
+                    <tr>
+                        <th scope=" col">Sample Date</th>
+                        <th scope="col">Patient Name</th>
+                        <th scope="col">Email ID</th>
+                        <th scope="col">Sample ID</th>
+                        <th scope="col">Haematology</th>
+                        <th scope="col">Thyroid Profile</th>
+                        <th scope="col">Glucometry</th>
+                        <th scope="col">Edit User</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let r of result|filter:firstName">
+                        <th scope="row">{{date|date:'fullTime'}}</th>
+                        <td>{{r.uname}}</td>
+                        <td>{{r.email}}</td>
+                        <td>{{r._id}}</td>
+                        <td><button class="btn btn-danger btn-lg" type="submit" [routerLink]="['/viewdetails/']">View
+                                Reports</button></td>
+                        <td><button class="btn btn-secondary btn-lg" type="submit" disabled>N/A</button></td>
+                        <td><button class="btn btn-success btn-lg" type="submit">Add-Report</button></td>
+                        <td><button class="btn btn-secondary btn-lg" type="submit"
+                                [routerLink]="['/getUser/' ,r._id]">Edit
+                                User</button>
+                        </td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

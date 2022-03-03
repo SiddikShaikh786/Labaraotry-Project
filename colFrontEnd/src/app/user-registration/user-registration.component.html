@@ -1,0 +1,53 @@
+<div class="container ">
+
+    <div style="background-color:#41aaa2; height:500px; width:400px; border-radius:30px; text-align:center; margin-left:350px;"
+        class="col-md-offset-4">
+        <form action="" method="POST" [formGroup]="regForm" (ngSubmit)="onRegForm()">
+
+            <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Register Form</h1>
+
+            <div class="col-sm-12" style="padding-top:10px;">
+                <input type="text" class="form-control" id="firstname" placeholder="Full Name" name="firstname"
+                    style="border-radius:15px;" formControlName="uname" name="uname" id="uname">
+                <span *ngIf="uname.invalid && uname.touched"
+                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**UserName
+                    required</span>
+            </div>
+
+            <div class="col-sm-12" style="padding-top:10px;">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                    style="border-radius:15px;" formControlName="email" name="email" id="email">
+                <span *ngIf="email.invalid && email.touched"
+                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**Email
+                    required</span>
+            </div>
+
+            <div class="col-sm-12" style="padding-top:10px;">
+                <input [type]="val" class="form-control" id="password" placeholder="Type your Password" name="password"
+                    style="border-radius:15px;" formControlName="password" id="password">
+                <span *ngIf="password.invalid && password.touched"
+                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**PasswordError
+                </span>
+                <i [class]="eye" class="eye" (click)="toggle()" aria-hidden="true"></i>
+
+            </div>
+            <div class="col-sm-12" style="padding-top:10px;">
+                <input type="text" class="form-control" id="form3Example" placeholder="Role" list="list"
+                    formControlName="role" name="role" id="role" style="border-radius:15px;" />
+                <datalist id=" list">
+                    <option value="user"></option>
+                    <option value="admin"></option>
+                </datalist>
+                <span *ngIf="role.invalid && role.touched"
+                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px;">**Need
+                    Role</span>
+            </div>
+            <div class=" col-sm-5 ml-5" style="padding-top:10px;position: relative;left:50px;">
+                <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+            </div>
+            <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/userLogin"
+                    class="fw-bold text-body"><u> user Login here</u></a></p>
+        </form>
+    </div>
+</div>

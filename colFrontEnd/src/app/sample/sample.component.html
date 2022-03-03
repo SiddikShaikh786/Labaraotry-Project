@@ -1,0 +1,45 @@
+<div class="container">
+
+    <form class="form" [formGroup]="sampleForm" (ngSubmit)="Submit()">
+
+        <h4 class="h">Create Test</h4>
+
+        <div>
+
+            <input type="text" placeholder="select Patient" class="a">
+
+        </div><br>
+
+        <div class="custom-control custom-checkbox">
+
+            <input type="checkbox" id="b" formControlName="haem">
+
+            <label for="customCheck1" id="b">Haematology</label>
+
+
+
+        </div>
+
+        <div class="custom-control custom-checkbox">
+
+            <input type="checkbox" id="b" formControlName="gluco">
+
+            <label for="customCheck1" id="b">Glucometry</label> <br>
+
+        </div>
+
+
+        <div class="custom-control custom-checkbox">
+
+            <input type="checkbox" id="b" formControlName="thyro">
+
+            <label for="customCheck1" id="b">Thyroid Profile</label>
+
+
+        </div><br>
+
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+
+    </form>
+
+</div>
