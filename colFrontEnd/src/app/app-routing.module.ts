@@ -17,10 +17,10 @@ import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'userLogin', component: UserLoginComponent },
-  { path: 'adminLogin', component: AdminLoginComponent, canActivate: [AuthGuard] },
-  { path: 'reg', component: UserRegistrationComponent },
-  { path: 'details', component: DetailsComponent },
+  { path: 'userLogin', component: UserLoginComponent, canActivate: [AuthGuard] },
+  { path: 'adminLogin', component: AdminLoginComponent },
+  { path: 'reg', component: UserRegistrationComponent, canActivate: [AuthGuard] },
+  { path: 'details', component: DetailsComponent, canActivate: [AuthGuard] },
   { path: 'sample', component: SampleComponent },
   { path: 'haematology', component: HaematologyComponent },
   { path: 'thyroid', component: ThyroidComponent },

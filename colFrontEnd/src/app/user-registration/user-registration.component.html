@@ -1,53 +1,86 @@
-<div class="container ">
+<section class="vh-50" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
 
-    <div style="background-color:#41aaa2; height:500px; width:400px; border-radius:30px; text-align:center; margin-left:350px;"
-        class="col-md-offset-4">
-        <form action="" method="POST" [formGroup]="regForm" (ngSubmit)="onRegForm()">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-            <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Register Form</h1>
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registration Form</p>
 
-            <div class="col-sm-12" style="padding-top:10px;">
-                <input type="text" class="form-control" id="firstname" placeholder="Full Name" name="firstname"
-                    style="border-radius:15px;" formControlName="uname" name="uname" id="uname">
-                <span *ngIf="uname.invalid && uname.touched"
-                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**UserName
-                    required</span>
+                                <form action="" method="POST" [formGroup]="regForm" (ngSubmit)="onRegForm()">
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="text" id="form3Example1c" class="form-control" id="firstname"
+                                                placeholder="Full Name" name="firstname" formControlName="uname" />
+                                            <span *ngIf="uname.invalid && uname.touched"
+                                                style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**UserName
+                                                required</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="email" id="form3Example3c" class="form-control"
+                                                placeholder="email" formControlName="email" />
+                                            <span *ngIf="email.invalid && email.touched"
+                                                style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**Email
+                                                required</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="password" id="form3Example4c" class="form-control" id="email"
+                                                placeholder="Enter password" name="password"
+                                                formControlName="password" />
+                                            <span *ngIf="password.invalid && password.touched"
+                                                style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**Pasword
+                                                Missmatched</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+
+                                            <input type="text" class="form-control" id="form3Example" placeholder="Role"
+                                                list="list" formControlName="role" name="role" id="role" />
+                                            <datalist id=" list">
+                                                <option value="user"></option>
+                                                <option value="admin"></option>
+                                            </datalist>
+                                            <span *ngIf="role.invalid && role.touched"
+                                                style=" position: relative;top:10px;color:red;font-weight: bolder;">**Need
+                                                Role</span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                <img src="https://cdn.pixabay.com/photo/2020/08/03/09/39/medical-5459630_960_720.png"
+                                    width="500px" class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-sm-12" style="padding-top:10px;">
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
-                    style="border-radius:15px;" formControlName="email" name="email" id="email">
-                <span *ngIf="email.invalid && email.touched"
-                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**Email
-                    required</span>
-            </div>
-
-            <div class="col-sm-12" style="padding-top:10px;">
-                <input [type]="val" class="form-control" id="password" placeholder="Type your Password" name="password"
-                    style="border-radius:15px;" formControlName="password" id="password">
-                <span *ngIf="password.invalid && password.touched"
-                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**PasswordError
-                </span>
-                <i [class]="eye" class="eye" (click)="toggle()" aria-hidden="true"></i>
-
-            </div>
-            <div class="col-sm-12" style="padding-top:10px;">
-                <input type="text" class="form-control" id="form3Example" placeholder="Role" list="list"
-                    formControlName="role" name="role" id="role" style="border-radius:15px;" />
-                <datalist id=" list">
-                    <option value="user"></option>
-                    <option value="admin"></option>
-                </datalist>
-                <span *ngIf="role.invalid && role.touched"
-                    style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px;">**Need
-                    Role</span>
-            </div>
-            <div class=" col-sm-5 ml-5" style="padding-top:10px;position: relative;left:50px;">
-                <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-            </div>
-            <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/userLogin"
-                    class="fw-bold text-body"><u> user Login here</u></a></p>
-        </form>
+        </div>
     </div>
-</div>
+</section>

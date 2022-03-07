@@ -55,7 +55,8 @@ export class AdminLoginComponent implements OnInit {
     console.log(this.loginForm.value)
     this.adminservice.logData(this.loginForm.value).subscribe((data) => {
       console.log(this.result = data)
-
+      localStorage.setItem("role", this.result.data.role)
+      localStorage.setItem("token", this.result.data.token)
       if (this.result.data.role === 'admin') {
         this.router.navigate(["details"])
       } else {
