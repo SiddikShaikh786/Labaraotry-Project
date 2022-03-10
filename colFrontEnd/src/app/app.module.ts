@@ -15,11 +15,13 @@ import { ThyroidComponent } from './thyroid/thyroid.component';
 import { GlucometryComponent } from './glucometry/glucometry.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { AuthGuard } from './Guard/auth.guard';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EditregisterComponent } from './editregister/editregister.component'
 import { FilterPipe } from './Pipe/filter.pipe';
 import { SortnamePipe } from './Pipe/sortname.pipe';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { InterceptorInterceptor } from './Interceptor/interceptor.interceptor';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
     EditregisterComponent,
     FilterPipe,
     SortnamePipe,
-    ViewdetailsComponent
+    ViewdetailsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,11 @@ import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

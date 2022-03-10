@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <div *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col md-4">
@@ -55,6 +59,25 @@
                             Not a member? <a href="#">Signup now</a>
                         </div>
                     </form>
+                    <div class="text-center mb-3">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-primary btn-floating mx-2">
+                            <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-floating mx-2">
+                            <i class="fa fa-google fa-1x" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-floating mx-2">
+                            <i class="fa fa-twitter-square fa-1x" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-floating mx-2">
+                            <i class="fa fa-github-square fa-1x" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ import { UserregService } from '../Service/userreg.service';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-
+  isLoading = false;
 
 
   val: any = "password";
@@ -52,9 +52,11 @@ export class AdminLoginComponent implements OnInit {
   }
 
   onLogin() {
+    this.isLoading = true;
     console.log(this.loginForm.value)
     this.adminservice.logData(this.loginForm.value).subscribe((data) => {
       console.log(this.result = data)
+      this.isLoading = false;
       localStorage.setItem("role", this.result.data.role)
       localStorage.setItem("token", this.result.data.token)
       if (this.result.data.role === 'admin') {

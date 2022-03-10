@@ -9,17 +9,18 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link" routerLink="adminLogin" href="#"> Login </a>
+        <a class="nav-link" href="#" *ngIf="!service.getToken()" routerLink="adminLogin"> Login </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="reg" href="#"> Register</a>
+        <a class="nav-link" routerLink="reg" *ngIf="service.getAdmin()" href="#"> Register</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="details" href="#"> Samples</a>
+        <a class="nav-link" *ngIf="service.getAdmin()" routerLink="details" href="#"> Samples</a>
       </li>
 
       <li class="nav-item active">
-        <a style="position: absolute;right:115px;" class="nav-link" (click)="logout()" href="/adminLogin">logout</a>
+        <a style="position: absolute;right:115px;" *ngIf="service.getToken()" class="nav-link" (click)="logout()"
+          href="/adminLogin">logout</a>
 
       </li>
 

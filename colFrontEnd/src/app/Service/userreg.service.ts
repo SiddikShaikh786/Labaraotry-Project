@@ -34,7 +34,26 @@ export class UserregService {
     return this.http.get<any>("http://localhost:4000/users/getsample")
   }
 
+  getToken() {
+    if (localStorage.getItem("token")) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
 
+  getAdmin() {
+    if (localStorage.getItem('role') === 'admin') {
+      return true
+    }
+    else {
+      return false
+    }
 
+  }
 
+  getTokens() {
+    return localStorage.getItem('token')
+  }
 }

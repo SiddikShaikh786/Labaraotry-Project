@@ -21,7 +21,7 @@
         </div> <br>
 
         <form method="get">
-            <h2 style="margin-left:450px; font-weight:bolder"> User Details</h2>
+            <h2 style="margin-left:600px; font-weight:bolder"> User Details</h2>
             <table class="table table-bordered table-hover ">
                 <thead class="bg-info">
                     <tr>
@@ -29,9 +29,7 @@
                         <th scope="col">Patient Name</th>
                         <th scope="col">Email ID</th>
                         <th scope="col">Sample ID</th>
-                        <th scope="col">Haematology</th>
-                        <th scope="col">Thyroid Profile</th>
-                        <th scope="col">Glucometry</th>
+                        <th scope="col">View Deatails</th>
                         <th scope="col">Edit User</th>
 
 
@@ -46,12 +44,11 @@
                         <td>{{r.uname}}</td>
                         <td>{{r.email}}</td>
                         <td>{{r._id}}</td>
-                        <td><button class="btn btn-success btn-lg" type="submit" [routerLink]="['/viewdetails/']">View
+                        <td><button class="btn btn-success btn-lg" data-toggle="tooltip" data-placement="left"
+                                title="View Details" type="submit" [routerLink]="['/viewdetails']">View
                                 Reports</button></td>
-                        <td><button class="btn btn-secondary btn-lg" type="submit" disabled>N/A</button></td>
-                        <td><button class="btn btn-success btn-lg" type="submit">Add-Report</button></td>
-                        <td><button class="btn btn-primary btn-lg" type="submit"
-                                [routerLink]="['/getUser/' ,r._id]">Edit
+                        <td><button class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="bottom"
+                                title="Edit User" type="submit" [routerLink]="['/getUser/' ,r._id]">Edit
                                 User</button>
                         </td>
 

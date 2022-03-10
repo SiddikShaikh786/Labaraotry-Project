@@ -10,12 +10,10 @@ export class AuthGuard implements CanActivate {
   constructor(private route: Router) { }
   canActivate() {
     if (localStorage.getItem('token') && localStorage.getItem('role') === 'admin') {
-      alert('You are ADMIN, you can visit this page');
       return true
 
     }
     else {
-      alert('SORRY CANNOT ACESSS THIS PAGE !!!!')
       return false
     }
 
