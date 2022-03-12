@@ -34,6 +34,17 @@ export class UserregService {
     return this.http.get<any>("http://localhost:4000/users/getsample")
   }
 
+  //delete USERS
+  deleteData(_id: any) {
+    return this.http.delete(`http://localhost:4000/users/deleteUsers/${_id}`)
+  }
+
+  //ADD THYROID REPORT
+  addThyro(thyro: any) {
+    return this.http.post<any>("http://localhost:4000/users/addthyro", thyro)
+  }
+
+
   getToken() {
     if (localStorage.getItem("token")) {
       return true

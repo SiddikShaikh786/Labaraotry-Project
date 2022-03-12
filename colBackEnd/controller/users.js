@@ -131,6 +131,25 @@ const getUsers = async (req, res) => {
     }
 }
 
+//DELETE USERS 
+const deleteUsers = async (req, res, next) => {
+    console.log(req.params)
+    let { _id } = req.params
+    console.log(_id);
+    try {
+        await userModel.deleteOne({ _id: _id })
+        res.json({
+            error: false,
+            message: " user deleted Successfully",
+            data: null
+        })
+    }
+    catch (err) {
+        next(err)
+    }
+
+}
+
 module.exports = {
-    login, register, getAllSamples, getUser, getUsers
+    login, register, getAllSamples, getUser, getUsers, deleteUsers
 }

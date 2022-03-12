@@ -42,8 +42,11 @@ export class SampleComponent implements OnInit {
     else if (gluco) {
       this.router.navigate(["/glucometry"])
     }
-    else {
+    else if (thyro) {
       this.router.navigate(["/thyroid"])
+    }
+    else {
+      alert("  Select Atleast One !!!!")
     }
   }
 

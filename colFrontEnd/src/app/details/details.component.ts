@@ -23,5 +23,12 @@ export class DetailsComponent implements OnInit {
     })
   }
 
+  deleteUser(_id: any) {
+    console.log(_id);
 
+    this.service.deleteData(_id).subscribe((data) => {
+      confirm(" Are you sure want to DELETE??????")
+      console.log(data)
+    })
+  }
 }

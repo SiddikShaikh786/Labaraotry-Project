@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserregService } from '../Service/userreg.service';
 @Component({
   selector: 'app-thyroid',
   templateUrl: './thyroid.component.html',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ThyroidComponent implements OnInit {
   thyroidForm: FormGroup;
-  constructor() { }
+  constructor(private service: UserregService) { }
 
   ngOnInit() {
     this.thyroidForm = new FormGroup({
@@ -29,7 +30,12 @@ export class ThyroidComponent implements OnInit {
   }
 
   Submit() {
-    console.log(this.thyroidForm.value)
+    console.log(this.thyroidForm.value);
+
+    this.service.addThyro(this.thyroidForm.value).subscribe((data) => {
+      console.log(data)
+    })
+
   }
 
 }

@@ -22,6 +22,7 @@ import { SortnamePipe } from './Pipe/sortname.pipe';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { InterceptorInterceptor } from './Interceptor/interceptor.interceptor';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { AddReportComponent } from './add-report/add-report.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     FilterPipe,
     SortnamePipe,
     ViewdetailsComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AddReportComponent
   ],
   imports: [
     BrowserModule,

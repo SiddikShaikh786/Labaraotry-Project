@@ -31,6 +31,8 @@
                         <th scope="col">Sample ID</th>
                         <th scope="col">View Deatails</th>
                         <th scope="col">Edit User</th>
+                        <th scope="col">Delete User</th>
+                        <th scope="col">Add Report</th>
 
 
 
@@ -50,6 +52,14 @@
                         <td><button class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="bottom"
                                 title="Edit User" type="submit" [routerLink]="['/getUser/' ,r._id]">Edit
                                 User</button>
+                        </td>
+                        <td><button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="bottom"
+                                (click)="deleteUser(r._id)" title="Delete User" type="submit">Delete User
+                            </button>
+                        </td>
+                        <td><button class="btn btn-success btn-lg" data-toggle="tooltip" data-placement="bottom"
+                                [routerLink]="['/sample']" title="Delete User" type="submit">Add Report
+                            </button>
                         </td>
 
 
