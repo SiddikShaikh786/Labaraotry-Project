@@ -1,0 +1,28 @@
+<br> <br>
+<div class="container">
+  <h4 style="text-align:center;font-weight: bolder;">THYROID REPORT</h4>
+<form action="" method="GET">
+<table class="table">
+    <thead class="bg-danger">
+      <tr>
+      
+        <th scope="col">ID</th>
+        <th scope="col">TRI IOD</th>
+        <th scope="col">Thyroxine</th>
+        <th scope="col">TSH</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of result">
+    
+        <td>{{r._id}}</td>
+        <td>{{r.tri}}</td>
+        <td>{{r.thyroxine}}</td>
+        <td>{{r.tsh}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</form>
+</div>

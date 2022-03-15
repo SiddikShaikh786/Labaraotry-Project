@@ -22,7 +22,8 @@ import { SortnamePipe } from './Pipe/sortname.pipe';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { InterceptorInterceptor } from './Interceptor/interceptor.interceptor';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { AddReportComponent } from './add-report/add-report.component';
+import { ViewThyroidComponent } from './view-thyroid/view-thyroid.component';
+import { ViewglucoComponent } from './viewgluco/viewgluco.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AddReportComponent } from './add-report/add-report.component';
     SortnamePipe,
     ViewdetailsComponent,
     SpinnerComponent,
-    AddReportComponent
+    ViewThyroidComponent,
+    ViewglucoComponent
   ],
   imports: [
     BrowserModule,

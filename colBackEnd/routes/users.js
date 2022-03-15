@@ -4,6 +4,7 @@ const UserRouter = express.Router();
 const userController = require('../controller/users')
 const samplesController = require('../controller/sample')
 const thyroidReport = require('../controller/thyroid')
+const glucoReport = require('../controller/glucometry')
 const auth = require('../middleware/auth')
 
 //Registration
@@ -29,7 +30,13 @@ UserRouter.get('/getsample', samplesController.getAllDeatils)
 //Login
 UserRouter.post('/login', userController.login)
 
-//ADD REPORT 
+//ADD  THYROID REPORT  & GET REPORT
 UserRouter.post('/addthyro', thyroidReport.addThyroid)
+UserRouter.get('/getthyroid', thyroidReport.getThyroid)
+
+//ADD GLUCO REPORT & GET GLUCO REPORT
+UserRouter.post('/addgluco',glucoReport.addgluco)
+UserRouter.get('/getgluco',glucoReport.getgluco)
+
 
 module.exports = UserRouter

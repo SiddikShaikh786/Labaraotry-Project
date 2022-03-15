@@ -20,4 +20,19 @@ const addThyroid = async (req, res, next) => {
 
 }
 
-module.exports = { addThyroid }
+//getAllTHYROID REPORT
+const getThyroid= async (req,res, next)=> 
+{ 
+    try {
+        const thyroid = await thyro.find().lean();
+        res.json({
+            error: false,
+            message: " get thyroid report successfully",
+            data:{thyroid}
+        })
+    } catch (error) {
+        next(error)
+    }
+
+}
+module.exports = { addThyroid, getThyroid}

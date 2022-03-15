@@ -14,6 +14,7 @@ export class FilterPipe implements PipeTransform {
       if (user['uname'] === firstName) {
         users.push(user);
       }
+      
     }
     return users
   }

@@ -15,7 +15,7 @@ const addSample = async (req, res, next) => {
         }])
         res.json({
             error: false,
-            message: "samplereport as been added successfully",
+            message: "sample report as been added successfully",
             data: null
         })
     } catch (err) {
@@ -29,7 +29,7 @@ const getAllDeatils = async (req, res, next) => {
         const sampledata = await samples.find().lean();
         res.json({
             error: false,
-            message: " edited sample succesfully",
+            message: " GET samples succesfully",
             data: sampledata
         })
     } catch (err) {

@@ -44,6 +44,22 @@ export class UserregService {
     return this.http.post<any>("http://localhost:4000/users/addthyro", thyro)
   }
 
+  //GET THYROID REPORT
+  getthyroid()
+  { 
+    return this.http.get<any>('http://localhost:4000/users/getthyroid')
+  }
+
+  //SUBMIT THE GLUCO REPORT
+  addgluco(gluco:any){
+    return this.http.post<any>('http://localhost:4000/users/addgluco', gluco)
+  }
+
+  //GET THE GLUCO REPORT
+  getgluco(){
+    return this.http.get<any>('http://localhost:4000/users/getgluco')
+  }
+
 
   getToken() {
     if (localStorage.getItem("token")) {

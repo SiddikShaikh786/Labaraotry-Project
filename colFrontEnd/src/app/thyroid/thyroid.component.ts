@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserregService } from '../Service/userreg.service';
 @Component({
   selector: 'app-thyroid',
@@ -8,7 +9,7 @@ import { UserregService } from '../Service/userreg.service';
 })
 export class ThyroidComponent implements OnInit {
   thyroidForm: FormGroup;
-  constructor(private service: UserregService) { }
+  constructor(private service: UserregService, private route: Router) { }
 
   ngOnInit() {
     this.thyroidForm = new FormGroup({
@@ -33,9 +34,16 @@ export class ThyroidComponent implements OnInit {
     console.log(this.thyroidForm.value);
 
     this.service.addThyro(this.thyroidForm.value).subscribe((data) => {
+
       console.log(data)
+          this.route.navigate(['getthyroid'])
+
     })
 
   }
+  // routing()
+  // {
+  //   this.route.navigate(['getthyroid'])
+  // }
 
 }

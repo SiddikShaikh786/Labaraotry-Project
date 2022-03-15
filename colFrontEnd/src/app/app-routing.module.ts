@@ -12,7 +12,9 @@ import { ThyroidComponent } from './thyroid/thyroid.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { ViewThyroidComponent } from './view-thyroid/view-thyroid.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { ViewglucoComponent } from './viewgluco/viewgluco.component';
 
 
 const routes: Routes = [
@@ -27,8 +29,10 @@ const routes: Routes = [
   { path: 'glucometry', component: GlucometryComponent },
   { path: 'userpage', component: UserpageComponent },
   { path: 'getUser/:_id', component: EditregisterComponent },
-  { path: 'viewdetails', component: ViewdetailsComponent }
-];
+  { path: 'viewdetails', component: ViewdetailsComponent },
+  {path:'getthyroid', component:ViewThyroidComponent},
+  {path:'getgluco',component:ViewglucoComponent}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

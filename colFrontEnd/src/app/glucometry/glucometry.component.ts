@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserregService } from '../Service/userreg.service';
 
 @Component({
   selector: 'app-glucometry',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class GlucometryComponent implements OnInit {
   glucomteryForm: FormGroup
-  constructor() { }
+  constructor( private service: UserregService, private route: Router) { }
 
   ngOnInit() {
     this.glucomteryForm = new FormGroup({
@@ -34,6 +36,13 @@ export class GlucometryComponent implements OnInit {
   }
   Submit() {
     console.log(this.glucomteryForm.value)
+    this.service.addgluco(this.glucomteryForm.value).subscribe((data)=> 
+    { 
+      console.log(data)
+      this.route.navigate(['getgluco'])
+
+    })
+
   }
 
 }
