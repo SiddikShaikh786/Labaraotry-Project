@@ -60,6 +60,15 @@ export class UserregService {
     return this.http.get<any>('http://localhost:4000/users/getgluco')
   }
 
+//SUBMIT THE HAEMO REPORT
+addhaemo(haemo:any){
+  return this.http.post<any>('http://localhost:4000/users/addhaemo', haemo)
+}
+
+//GET HAEMO REPORT
+gethaemo(){
+  return this.http.get<any>('http://localhost:4000/users/gethaemo')
+}
 
   getToken() {
     if (localStorage.getItem("token")) {

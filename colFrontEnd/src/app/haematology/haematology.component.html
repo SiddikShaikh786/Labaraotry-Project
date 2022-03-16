@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form class="form" [formGroup]="haematologyForm" (ngSubmit)="Submit()">
+    <form class="form" [formGroup]="haematologyForm" (ngSubmit)="Submit()" method="POST">
 
         <h6 class="h">Enter Haematology Report</h6><br>
 
@@ -76,11 +76,11 @@
 
         <div id="a">
 
-            <input type="text" class="text" id="b" placeholder="Basophils*" name="basophils"
-                formControlName="basophils">
+            <input type="text" class="text" id="b" placeholder="Basophils*" name="basophills"
+                formControlName="basophills">
 
             <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="basophils?.invalid && basophils?.touched">**enter valid
+                *ngIf="basophills?.invalid && basophills?.touched">**enter valid
                 basophils</span>
 
             <input type="text" class="text" id="c" placeholder="Red Blood Cells(RBC)*" name="rbc" formControlName="rbc">

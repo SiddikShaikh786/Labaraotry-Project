@@ -24,6 +24,7 @@ import { InterceptorInterceptor } from './Interceptor/interceptor.interceptor';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ViewThyroidComponent } from './view-thyroid/view-thyroid.component';
 import { ViewglucoComponent } from './viewgluco/viewgluco.component';
+import { ViewhaemotolgyComponent } from './viewhaemotolgy/viewhaemotolgy.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ViewglucoComponent } from './viewgluco/viewgluco.component';
     ViewdetailsComponent,
     SpinnerComponent,
     ViewThyroidComponent,
-    ViewglucoComponent
+    ViewglucoComponent,
+    ViewhaemotolgyComponent
   ],
   imports: [
     BrowserModule,

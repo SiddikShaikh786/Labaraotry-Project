@@ -15,6 +15,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { ViewThyroidComponent } from './view-thyroid/view-thyroid.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { ViewglucoComponent } from './viewgluco/viewgluco.component';
+import{ViewhaemotolgyComponent} from './viewhaemotolgy/viewhaemotolgy.component'
 
 
 const routes: Routes = [
@@ -31,7 +32,9 @@ const routes: Routes = [
   { path: 'getUser/:_id', component: EditregisterComponent },
   { path: 'viewdetails', component: ViewdetailsComponent },
   {path:'getthyroid', component:ViewThyroidComponent},
-  {path:'getgluco',component:ViewglucoComponent}
+  {path:'getgluco',component:ViewglucoComponent},
+  {path:'gethaemo', component:ViewhaemotolgyComponent}
+
 ]
 
 @NgModule({

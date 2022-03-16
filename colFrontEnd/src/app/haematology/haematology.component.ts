@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserregService } from '../Service/userreg.service';
 
 @Component({
   selector: 'app-haematology',
@@ -9,32 +10,32 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HaematologyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: UserregService,private route: Router) { }
 
   ngOnInit() {
 
   }
   haematologyForm = new FormGroup({
 
-    Haemoglobin: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+    Haemoglobin: new FormControl("", [Validators.required]),
 
-    TotalCount: new FormControl("", [Validators.required, Validators.maxLength(30), Validators.minLength(7)]),
+    TotalCount: new FormControl("", [Validators.required]),
 
-    Neutrophils: new FormControl("", [Validators.required, Validators.minLength(7), Validators.maxLength(12)]),
+    Neutrophils: new FormControl("", [Validators.required]),
 
-    Lymphocytes: new FormControl("", [Validators.required, Validators.minLength(7), Validators.maxLength(12)]),
+    Lymphocytes: new FormControl("", [Validators.required]),
 
-    eosinophils: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+    eosinophils: new FormControl("", [Validators.required]),
 
-    monocytes: new FormControl("", [Validators.required, Validators.maxLength(30), Validators.minLength(7),]),
+    monocytes: new FormControl("", [Validators.required]),
 
-    basophils: new FormControl("", [Validators.required, Validators.minLength(7), Validators.maxLength(12)]),
+    basophills: new FormControl("", [Validators.required]),
 
-    rbc: new FormControl("", [Validators.required, Validators.minLength(7), Validators.maxLength(12)]),
+    rbc: new FormControl("", [Validators.required]),
 
-    pcv: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
+    pcv: new FormControl("", [Validators.required]),
 
-    mcv: new FormControl("", [Validators.required, Validators.maxLength(30), Validators.minLength(7)])
+    mcv: new FormControl("", [Validators.required])
 
   })
   get Haemoglobin() {
@@ -73,9 +74,9 @@ export class HaematologyComponent implements OnInit {
 
   }
 
-  get basophils() {
+  get basophills() {
 
-    return this.haematologyForm.get('basophils')
+    return this.haematologyForm.get('basophills')
 
   }
 
@@ -100,6 +101,11 @@ export class HaematologyComponent implements OnInit {
   Submit() {
 
     console.log(this.haematologyForm.value);
+    this.service.addhaemo(this.haematologyForm.value).subscribe((data) => {
+      console.log(data);
+
+      this.route.navigate(['gethaemo']);
+    })
 
 
 

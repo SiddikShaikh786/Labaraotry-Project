@@ -5,6 +5,7 @@ const userController = require('../controller/users')
 const samplesController = require('../controller/sample')
 const thyroidReport = require('../controller/thyroid')
 const glucoReport = require('../controller/glucometry')
+const heamoReport = require('../controller/haemotology')
 const auth = require('../middleware/auth')
 
 //Registration
@@ -37,6 +38,11 @@ UserRouter.get('/getthyroid', thyroidReport.getThyroid)
 //ADD GLUCO REPORT & GET GLUCO REPORT
 UserRouter.post('/addgluco',glucoReport.addgluco)
 UserRouter.get('/getgluco',glucoReport.getgluco)
+
+//ADD HAEMOTOLOGY REPORT  & GET REPORT
+UserRouter.post('/addhaemo',heamoReport.addHeamotology)
+UserRouter.get('/gethaemo',heamoReport.getHaemo)
+
 
 
 module.exports = UserRouter
