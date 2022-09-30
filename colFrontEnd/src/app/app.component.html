@@ -1,32 +1,61 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand" href="#">Laboratory</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#">Scatolgy</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
       <li class="nav-item active">
-        <a class="nav-link" href="#" *ngIf="!service.getToken()" routerLink="adminLogin"> Login </a>
+        <a
+          class="nav-link"
+          href="#"
+          *ngIf="!service.getToken()"
+          routerLink="adminLogin"
+        >
+          Login
+        </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="reg" *ngIf="service.getAdmin()" href="#"> Register</a>
+        <a
+          class="nav-link"
+          routerLink="reg"
+          *ngIf="service.getAdmin()"
+          href="#"
+        >
+          Register</a
+        >
       </li>
       <li class="nav-item active">
-        <a class="nav-link" *ngIf="service.getAdmin()" routerLink="details" href="#"> Samples</a>
+        <a
+          class="nav-link"
+          *ngIf="service.getAdmin()"
+          routerLink="details"
+          href="#"
+        >
+          Samples</a
+        >
       </li>
 
       <li class="nav-item active">
-        <a style="position: absolute;right:115px;" *ngIf="service.getToken()" class="nav-link" (click)="logout()"
-          href="/adminLogin">logout</a>
-
+        <a
+          style="position: absolute; right: 115px; top: 10px"
+          *ngIf="service.getToken()"
+          class="nav-link"
+          (click)="logout()"
+          href="/adminLogin"
+          >logout</a
+        >
       </li>
-
-
     </ul>
-
   </div>
 </nav>
 <router-outlet></router-outlet>

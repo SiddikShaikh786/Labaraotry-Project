@@ -1,121 +1,194 @@
 <div class="container">
+  <form
+    class="form"
+    [formGroup]="haematologyForm"
+    (ngSubmit)="Submit()"
+    method="POST"
+  >
+    <h6 class="h">Enter Haematology Report</h6>
+    <br />
 
-    <form class="form" [formGroup]="haematologyForm" (ngSubmit)="Submit()" method="POST">
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Haemoglobin*g/di"
+        name="Haemoglobin"
+        formControlName="Haemoglobin"
+      />
 
-        <h6 class="h">Enter Haematology Report</h6><br>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        id="a"
+        *ngIf="Haemoglobin?.invalid && Haemoglobin?.touched"
+        >**enter valid Haemoglobin</span
+      >
 
-        <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="c"
+        placeholder="Total Count/WBC*"
+        name="TotalCount"
+        formControlName="TotalCount"
+      />
 
-            <input type="text" class="text" id="b" placeholder="Haemoglobin*g/di" name="Haemoglobin"
-                formControlName="Haemoglobin">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="TotalCount?.invalid && TotalCount?.touched"
+        >**enter valid Total Count</span
+      >
+    </div>
+    <br />
 
-            <span style="color: red;font-weight: bolder;font-size:20px;" id="a"
-                *ngIf="Haemoglobin?.invalid && Haemoglobin?.touched">**enter valid
-                Haemoglobin</span>
+    <div id="a"></div>
+    <br />
 
-            <input type="text" class="text" id="c" placeholder="Total Count/WBC*" name="TotalCount"
-                formControlName="TotalCount">
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Neutrophils*"
+        name="Neutrophils"
+        formControlName="Neutrophils"
+      />
 
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="TotalCount?.invalid && TotalCount?.touched">**enter
-                valid
-                Total Count</span>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="Neutrophils?.invalid && Neutrophils?.touched"
+        >**enter valid Neutrophils</span
+      >
 
-        </div><br>
+      <input
+        type="text"
+        class="text"
+        id="c"
+        placeholder="Lymphocytes*"
+        name="Lymphocytes"
+        formControlName="Lymphocytes"
+      />
 
-        <div id="a">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="Lymphocytes?.invalid && Lymphocytes?.touched"
+        >**enter valid Lymphocytes</span
+      >
+    </div>
+    <br />
 
-        </div><br>
+    <div id="a"></div>
+    <br />
 
-        <div id="a">
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Eosinophils*"
+        name="eosinophils"
+        formControlName="eosinophils"
+      />
 
-            <input type="text" class="text" id="b" placeholder="Neutrophils*" name="Neutrophils"
-                formControlName="Neutrophils">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="eosinophils?.invalid && eosinophils?.touched"
+        >**enter valid Eosinophils</span
+      >
 
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="Neutrophils?.invalid && Neutrophils?.touched">**enter
-                valid
-                Neutrophils</span>
+      <input
+        type="text"
+        class="text"
+        id="c"
+        placeholder="Monocytes*"
+        name="monocytes"
+        formControlName="monocytes"
+      />
 
-            <input type="text" class="text" id="c" placeholder="Lymphocytes*" name="Lymphocytes"
-                formControlName="Lymphocytes">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="monocytes?.invalid && monocytes?.touched"
+        >**enter valid Monocytes</span
+      >
+    </div>
+    <br />
 
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="Lymphocytes?.invalid && Lymphocytes?.touched">**enter
-                valid
-                Lymphocytes</span>
+    <div id="a"></div>
+    <br />
 
-        </div><br>
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Basophils*"
+        name="basophills"
+        formControlName="basophills"
+      />
 
-        <div id="a">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="basophills?.invalid && basophills?.touched"
+        >**enter valid basophils</span
+      >
 
-        </div><br>
+      <input
+        type="text"
+        class="text"
+        id="c"
+        placeholder="Red Blood Cells(RBC)*"
+        name="rbc"
+        formControlName="rbc"
+      />
 
-        <div id="a">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="rbc?.invalid && rbc?.touched"
+        >**enter valid RBC</span
+      >
+    </div>
+    <br />
 
-            <input type="text" class="text" id="b" placeholder="Eosinophils*" name="eosinophils"
-                formControlName="eosinophils">
+    <div id="a"></div>
+    <br />
 
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="eosinophils?.invalid && eosinophils?.touched">**enter
-                valid
-                Eosinophils</span>
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="packed Cell Volume(PCV)*"
+        name="pcv"
+        formControlName="pcv"
+      />
 
-            <input type="text" class="text" id="c" placeholder="Monocytes*" name="monocytes"
-                formControlName="monocytes">
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="pcv?.invalid && pcv?.touched"
+        >**enter valid PCV</span
+      >
 
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="monocytes?.invalid && monocytes?.touched">**enter valid
-                Monocytes</span>
+      <input
+        type="text"
+        class="text"
+        id="c"
+        placeholder="MEAN Corpuscular Volume(MCV)*"
+        name="mcv"
+        formControlName="mcv"
+      />
 
-        </div><br>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="mcv?.invalid && mcv?.touched"
+        >**enter valid MCV</span
+      >
+    </div>
+    <br />
 
-        <div id="a">
+    <div></div>
+    <br />
 
-        </div><br>
-
-        <div id="a">
-
-            <input type="text" class="text" id="b" placeholder="Basophils*" name="basophills"
-                formControlName="basophills">
-
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="basophills?.invalid && basophills?.touched">**enter valid
-                basophils</span>
-
-            <input type="text" class="text" id="c" placeholder="Red Blood Cells(RBC)*" name="rbc" formControlName="rbc">
-
-            <span style="color: red;font-weight: bolder;font-size:20px;" *ngIf="rbc?.invalid && rbc?.touched">**enter
-                valid RBC</span>
-
-        </div><br>
-
-        <div id="a">
-
-        </div><br>
-
-        <div id="a">
-
-            <input type="text" class="text" id="b" placeholder="packed Cell Volume(PCV)*" name="pcv"
-                formControlName="pcv">
-
-            <span style="color: red;font-weight: bolder;font-size:20px;" *ngIf="pcv?.invalid && pcv?.touched">**enter
-                valid PCV</span>
-
-            <input type="text" class="text" id="c" placeholder="MEAN Corpuscular Volume(MCV)*" name="mcv"
-                formControlName="mcv">
-
-            <span style="color: red;font-weight: bolder;font-size:20px;" *ngIf="mcv?.invalid && mcv?.touched">**enter
-                valid MCV</span>
-
-        </div><br>
-
-        <div>
-
-        </div><br>
-
-        <button type="submit" class="btn btn-lg btn-primary">submit</button>
-
-    </form>
-
+    <button type="submit" class="btn btn-md btn-primary">submit</button>
+  </form>
 </div>

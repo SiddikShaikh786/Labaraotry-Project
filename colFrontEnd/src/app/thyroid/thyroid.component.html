@@ -1,42 +1,67 @@
 <div class="container">
+  <form
+    class="form"
+    [formGroup]="thyroidForm"
+    (ngSubmit)="Submit()"
+    method="POST"
+  >
+    <h6 class="h">Enter Thyroid Profile Data</h6>
+    <br />
 
-    <form class="form" [formGroup]="thyroidForm" (ngSubmit)="Submit()" method="POST">
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="TRI IODO Thyonine-T3 Total"
+        name="tri"
+        formControlName="tri"
+      /><br />
 
-        <h6 class="h">Enter Thyroid Profile Data</h6><br>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="tri?.invalid && tri?.touched"
+        >**enter valid Post Prandial</span
+      >
+    </div>
+    <br />
 
-        <div id="a">
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Thyroxine-T4"
+        name="thyroxine"
+        formControlName="thyroxine"
+      /><br />
 
-            <input type="text" class="text" id="b" placeholder="TRI IODO Thyonine-T3 Total" name="tri"
-                formControlName="tri"><br>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="thyroxine?.invalid && thyroxine?.touched"
+        >**enter valid Thyroxine-T4</span
+      >
+    </div>
+    <br />
 
-            <span style="color: red;font-weight: bolder;font-size:20px;" *ngIf="tri?.invalid && tri?.touched">**enter
-                valid Post Prandial</span>
+    <div id="a">
+      <input
+        type="text"
+        class="text"
+        id="b"
+        placeholder="Thyroid Stimulating Harmone(TSH)"
+        name="tsh"
+        formControlName="tsh"
+      /><br />
 
-        </div><br>
+      <span
+        style="color: red; font-weight: bolder; font-size: 20px"
+        *ngIf="tsh?.invalid && tsh?.touched"
+        >**enter valid TSH</span
+      >
+    </div>
+    <br />
 
-        <div id="a">
-
-            <input type="text" class="text" id="b" placeholder="Thyroxine-T4" name="thyroxine"
-                formControlName="thyroxine"><br>
-
-            <span style="color: red;font-weight: bolder;font-size:20px;"
-                *ngIf="thyroxine?.invalid && thyroxine?.touched">**enter valid Thyroxine-T4</span>
-
-        </div><br>
-
-        <div id="a">
-
-            <input type="text" class="text" id="b" placeholder="Thyroid Stimulating Harmone(TSH)" name="tsh"
-                formControlName="tsh"><br>
-
-            <span style="color: red;font-weight: bolder;font-size:20px;" *ngIf="tsh?.invalid && tsh?.touched">**enter
-                valid TSH</span>
-
-        </div><br>
-  
-        <button class="btn btn-lg btn-primary"type="submit"> submit</button>
-
-
-    </form>
-
+    <button class="btn btn-md btn-primary" type="submit">submit</button>
+  </form>
 </div>

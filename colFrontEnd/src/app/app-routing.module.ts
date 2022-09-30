@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { DetailsComponent } from './details/details.component';
 import { EditregisterComponent } from './editregister/editregister.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { GlucometryComponent } from './glucometry/glucometry.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { HaematologyComponent } from './haematology/haematology.component';
@@ -20,9 +21,9 @@ import{ViewhaemotolgyComponent} from './viewhaemotolgy/viewhaemotolgy.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'userLogin', component: UserLoginComponent, canActivate: [AuthGuard] },
+  { path: 'userLogin', component: UserLoginComponent, },
   { path: 'adminLogin', component: AdminLoginComponent },
-  { path: 'reg', component: UserRegistrationComponent, canActivate: [AuthGuard] },
+  { path: 'reg', component: UserRegistrationComponent },
   { path: 'details', component: DetailsComponent, canActivate: [AuthGuard] },
   { path: 'sample', component: SampleComponent },
   { path: 'haematology', component: HaematologyComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'viewdetails', component: ViewdetailsComponent },
   {path:'getthyroid', component:ViewThyroidComponent},
   {path:'getgluco',component:ViewglucoComponent},
-  {path:'gethaemo', component:ViewhaemotolgyComponent}
+  {path:'gethaemo', component:ViewhaemotolgyComponent},
+  {path:'forgot',component:ForgotPasswordComponent},
 
 ]
 

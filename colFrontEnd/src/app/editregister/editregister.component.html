@@ -1,15 +1,32 @@
-<h3 style="text-align:center;margin-left: -100px; ">UPDATE USER</h3>
-
+<h3>UPDATE USER</h3>
 
 <div class="container">
-    <form #editForm="ngForm" (ngSubmit)="getUser(editForm)">
-        <label class="text" for=""> Name</label> &nbsp;
-        <input type="text" id="uname" #uname="ngModel" [(ngModel)]="SelectedUser.uname" name="uname"><br>
-        <label class="text" for=""> E-mail</label> &nbsp;
-        <input type="text" id="email" name="email" #email="ngModel" [(ngModel)]="SelectedUser.email"><br> <br>
+  <form #editForm="ngForm" (ngSubmit)="getUser(editForm)">
+    <label class="text" for=""> Name</label> &nbsp;
+    <input
+      type="text"
+      id="uname"
+      #uname="ngModel"
+      [(ngModel)]="SelectedUser.uname"
+      name="uname"
+    />
+    <label class="text" for=""> E-mail</label> &nbsp;
+    <input
+      type="text"
+      id="email"
+      name="email"
+      #email="ngModel"
+      [(ngModel)]="SelectedUser.email"
+    />
 
-        <button style="margin-left:350px;" class="btn btn-info btn-lg" data-toggle="tooltip" data-placement="bottom"
-            title="Edit User">Edit</button>
-    </form>
-
+    <button
+      style="margin-left: 250px"
+      class="btn btn-info btn-lg"
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Edit User"
+    >
+      Edit
+    </button>
+  </form>
 </div>

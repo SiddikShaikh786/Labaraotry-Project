@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Login Form Design</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div *ngIf="isLoading">
-        <app-spinner></app-spinner>
+      <app-spinner></app-spinner>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col md-4">
-
-                <img style="position:relative;top:10px;height:600px;width:450px" src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg
-                    " width="350px" alt="">
-            </div>
-            <div class="col md-3">
-                <div class="wrapper">
-                    <div class="title">
-                        Login Form
-                    </div>
-                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-                        <div class="field">
-                            <input type="email" required formControlName="email">
-                            <label>Email Address</label>
-                            <span *ngIf="email.invalid && email.touched"
-                                style=" position: relative;top:10px;color:red;font-weight: bolder;margin-bottom:100px">**Email
-                                required</span>
-                        </div> <br>
-                        <div class="field">
-                            <input [type]="val" required formControlName="password">
-                            <label>Password</label>
-                            <span *ngIf="password.invalid && password.touched"
-                                style=" position: relative;top:10px;color:red;font-weight: bolder;">**password
-                                required</span>
-                            <i [class]="eye" class="eye" (click)="toggle()" aria-hidden="true"></i>
-
-
-                        </div> <br>
-                        <div class="content">
-                            <div class="checkbox">
-                                <input type="checkbox" id="remember-me">
-                                <label for="remember-me">Remember me</label>
-
-                            </div>
-                            <div class="pass-link">
-                                <a href="#">Forgot password?</a>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <input type="submit" value="Login">
-                        </div>
-                        <div class="signup-link">
-                            Not a member? <a href="#">Signup now</a>
-                        </div>
-                    </form>
-                    <div class="text-center mb-3">
-                        <p>Sign in with:</p>
-                        <button type="button" class="btn btn-primary btn-floating mx-2">
-                            <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-primary btn-floating mx-2">
-                            <i class="fa fa-google fa-1x" aria-hidden="true"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-primary btn-floating mx-2">
-                            <i class="fa fa-twitter-square fa-1x" aria-hidden="true"></i>
-                        </button>
-
-                        <button type="button" class="btn btn-primary btn-floating mx-2">
-                            <i class="fa fa-github-square fa-1x" aria-hidden="true"></i>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
+      <div class="row">
+        <div class="col md-4">
+          <img
+            style="position: relative; top: 10px; height: 600px; width: 450px"
+            src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg
+                    "
+            width="350px"
+            alt=""
+          />
         </div>
-    </div>
-</body>
+        <div class="col md-3">
+          <div class="wrapper">
+            <div class="title">Login Form</div>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+              <div class="field">
+                <input type="email" required formControlName="email" />
+                <label>Email Address</label>
+                <span
+                  *ngIf="email.invalid && email.touched"
+                  style="
+                    position: relative;
+                    top: 10px;
+                    color: red;
+                    font-weight: bolder;
+                    margin-bottom: 100px;
+                  "
+                  >**Email required</span
+                >
+              </div>
+              <br />
+              <div class="field">
+                <input [type]="val" required formControlName="password" />
+                <label>Password</label>
+                <span
+                  *ngIf="password.invalid && password.touched"
+                  style="
+                    position: relative;
+                    top: 10px;
+                    color: red;
+                    font-weight: bolder;
+                  "
+                  >**password required</span
+                >
+                <i
+                  [class]="eye"
+                  class="eye"
+                  (click)="toggle()"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <br />
+              <div class="content">
+                <div class="checkbox">
+                  <input type="checkbox" id="remember-me" />
+                  <label for="remember-me">Remember me</label>
+                </div>
+                <div class="pass-link">
+                  <a href="/forgot">Forgot password?</a>
+                </div>
+              </div>
+              <div class="field">
+                <input type="submit" value="Login" />
+              </div>
+              <div class="signup-link">
+                Not a member? <a href="/reg">Signup now</a>
+              </div>
+            </form>
+            <div class="text-center mb-3">
+              <p>Sign in with:</p>
+              <button type="button" class="btn btn-primary btn-floating mx-2">
+                <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
+              </button>
 
+              <button type="button" class="btn btn-primary btn-floating mx-2">
+                <i class="fa fa-google fa-1x" aria-hidden="true"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-2">
+                <i class="fa fa-twitter-square fa-1x" aria-hidden="true"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-2">
+                <i class="fa fa-github-square fa-1x" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

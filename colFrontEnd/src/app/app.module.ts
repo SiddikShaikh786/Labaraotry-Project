@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from './material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { ViewThyroidComponent } from './view-thyroid/view-thyroid.component';
 import { ViewglucoComponent } from './viewgluco/viewgluco.component';
 import { ViewhaemotolgyComponent } from './viewhaemotolgy/viewhaemotolgy.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -47,7 +50,8 @@ import { ViewhaemotolgyComponent } from './viewhaemotolgy/viewhaemotolgy.compone
     SpinnerComponent,
     ViewThyroidComponent,
     ViewglucoComponent,
-    ViewhaemotolgyComponent
+    ViewhaemotolgyComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,12 +59,17 @@ import { ViewhaemotolgyComponent } from './viewhaemotolgy/viewhaemotolgy.compone
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
-  providers: [AuthGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: InterceptorInterceptor,
-    multi: true,
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

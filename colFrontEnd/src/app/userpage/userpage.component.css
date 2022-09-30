@@ -1,0 +1,22 @@
+/* .mat-report{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+   /* width: 100%; */
+   
+
+
+
+.book-demo{
+    display:inline-block;
+    margin:10px;
+}
+.book__doc{
+    border:1px solid black;
+    border-radius:10px;
+    background-color:lightblue;
+}
+mat-grid-tile {
+  background: lightblue;
+}
