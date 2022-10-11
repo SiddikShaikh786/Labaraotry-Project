@@ -1,5 +1,7 @@
-.samples
-{
-    width:700vh;
-    height:500px;
+.samples {
+  width: 700vh;
+  height: 500px;
+}
+.btn {
+  margin-top: 40px;
 }

@@ -73,7 +73,9 @@
                 </div>
               </div>
               <div class="field">
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login"
+                [disabled]="!loginForm.invalid" />
+                 
               </div>
               <div class="signup-link">
                 Not a member? <a href="/reg">Signup now</a>

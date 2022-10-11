@@ -37,5 +37,9 @@ export class ForgotPasswordComponent implements OnInit {
     alert('password reset successfully');
     this.router.navigate(['adminLogin']);
   }
+
+  checkout(){
+    alert('password reset successfully');
+  }
   ngOnInit(): void {}
 }
