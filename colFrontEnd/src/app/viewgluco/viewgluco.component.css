@@ -1,0 +1,10 @@
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+}
+button {
+  width: 100px;
+}
