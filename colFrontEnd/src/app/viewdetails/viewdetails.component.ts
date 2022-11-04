@@ -23,15 +23,18 @@ export class ViewdetailsComponent implements OnInit {
   ) {}
 
   result: any;
+  getHaemo: any;
   ngOnInit() {
-    this.service.fetchSample().subscribe((data) => {
+    this.service.gethaemo().subscribe((data) => {
+      console.log(data.haemotologyR);
       this.result = data;
-      console.log('All details :-', this.result.data);
-      this.haemo = this.result.data[0].haemotology;
-      this.gluco = this.result.data[0].glucometry;
+      this.getHaemo = this.result.data.haemotologyR;
+      console.log('All details :-', this.getHaemo);
+      this.haemo = this.getHaemo[0];
+      // this.gluco = this.result.data[0].glucometry;
 
-      console.log(this.haemo);
-      console.log(this.gluco);
+      console.log('haemo',this.haemo);
+      // console.log(this.gluco);
     });
   }
   public openPDF(): void {

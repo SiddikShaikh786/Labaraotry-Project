@@ -63,7 +63,7 @@ const login = async (req, res, next) => {
                     data: null
                 })
             }
-        }
+        }   
         else {
             res.status(401).json({
                 error: true,
@@ -82,7 +82,7 @@ const getAllSamples = async (req, res) => {
         const samples = await userModel.find().lean();
         res.json({
             error: false,
-            message: "colledcted samples successfully",
+            message: "collected samples successfully",
             data:
             {
                 samples
