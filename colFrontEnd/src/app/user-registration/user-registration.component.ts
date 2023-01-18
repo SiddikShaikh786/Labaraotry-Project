@@ -60,7 +60,7 @@ export class UserRegistrationComponent implements OnInit {
       // this.result = res
       // console.log(this.result)
       alert('registered  successfully');
-      this.route.navigate(['/details']);
+      this.route.navigate(['/adminLogin']);
       console.log(res);
     });
   }

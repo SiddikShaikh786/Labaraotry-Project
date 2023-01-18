@@ -38,11 +38,23 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let r of result | filter: firstName">
-              <th scope="row">{{ date | date: "fullTime" }}</th>
+            <tr *ngFor="let r of result | filter : firstName">
+              <th scope="row">{{ date | date : "fullTime" }}</th>
               <td>{{ r.uname }}</td>
               <td>{{ r.email }}</td>
               <td>{{ r._id }}</td>
+              <td>
+                <button
+                  class="btn btn-success btn-lg"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  [routerLink]="['/sample']"
+                  title="Delete User"
+                  type="submit"
+                >
+                  Add Report
+                </button>
+              </td>
               <td>
                 <button
                   class="btn btn-success btn-lg"
@@ -77,18 +89,6 @@
                   type="submit"
                 >
                   Delete User
-                </button>
-              </td>
-              <td>
-                <button
-                  class="btn btn-success btn-lg"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  [routerLink]="['/sample']"
-                  title="Delete User"
-                  type="submit"
-                >
-                  Add Report
                 </button>
               </td>
             </tr>

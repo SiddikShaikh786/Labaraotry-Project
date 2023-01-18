@@ -11,11 +11,10 @@ const auth = require('../middleware/auth')
 //Registration
 UserRouter.post('/register', userController.register)
 
-//feth data
+//fetch data
 UserRouter.get('/users', userController.getAllSamples);
 
 //delete data
-
 UserRouter.delete('/deleteUsers/:_id', userController.deleteUsers)
 
 //edit data
